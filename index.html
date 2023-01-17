@@ -6,7 +6,10 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
-    <body>
+    <script src="main.js"></script>
+    <script>var f_number=2;</script>
+
+    <body onload="fadeInAnimation()">
         <h1>Zach Tong</h1>
         <img src="wooper.png" class="header_image" width="70px" height="70px"> 
         <br/>
@@ -15,17 +18,20 @@
                 <a href="index.html"> Main </a> 
                 <div class="triangle"></div> 
             </li> 
-            <li> <a href="#">Resume</a></li> 
+            <li onclick="errorMessage()"> <a href="#">Resume</a></li> 
             <li> <a href="art.html">Art</a></li> 
-            <li> <a href="#">Blog</a></li> 
-            <li> <a href="#">Notes</a></li> 
+            <li onclick="errorMessage()"> <a href="#">Blog</a></li> 
+            <li onclick="errorMessage()"> <a href="#">Notes</a></li> 
         </ul>
 
-        <h2>About Me</h2>
-        <p>Hi, my name is Zach Tong. </p> 
-        <p>I'm currently a Rutgers senior majoring in mechanical engineering, with a minor in chemistry.</p>
-        <p>(This website is not finished)</p>
+        <h2 class="f1 not-visible">About Me</h2>
+        <div class="f2 not-visible">
+            <p>Hi, my name is Zach Tong. </p>
+            <p>I'm currently a Rutgers senior majoring in mechanical engineering, with a minor in chemistry.</p>
+        </div>
 
     </body>
+
+    
 
 </html>
