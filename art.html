@@ -6,24 +6,30 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
-    <body>    
+    <script src="main.js"></script>
+    <script>var f_number=3;</script>
+    <script>var autoScrolling=1;</script>
+
+    <body onload="fadeInAnimation()">    
         <h1>Zach Tong</h1>
         <img src="wooper.png" class="header_image" width="70px" height="70px"> 
         <br/>
         <ul> 
             <li> <a href="index.html">Main</a></li> 
-            <li> <a href="#">Resume</a></li> 
+            <li onclick="errorMessage()"> <a href="#">Resume</a></li> 
             <li class="current_page"> 
                 <a href="art.html"> Art </a> 
                 <div class="triangle"></div> 
             </li> 
-            <li> <a href="#">Blog</a></li> 
-            <li> <a href="#">Notes</a></li> 
+            <li onclick="errorMessage()"> <a href="#">Blog</a></li> 
+            <li onclick="errorMessage()"> <a href="#">Notes</a></li> 
         </ul>
 
-        <h2>Pokemon</h2>
-        <p>Some minimalistic Pokemon I drew for Tiktok, using Paint.net.</p>
-        <div class="media_carousel">
+        <h2 class="f1 not-visible">Pokemon</h2>
+        <p class="f2 not-visible">Some minimalistic Pokemon I drew for Tiktok, using Paint.net.</p>
+        <div class="f3 not-visible">
+            <button onclick="toggleAutoScroll()">Toggle Auto Scroll</button>
+            <div class="media_carousel autoScroll">
             <div class="media_element">
                 <img src="art_pokemon/bulbasaur.png">
                 <p class="media_title">Bulbasaur</p>
@@ -69,15 +75,17 @@
                 <p class="media_title">Turtwig</p>
             </div>
             <div class="media_element">
-                <img src="art_pokemon/umbreon.png">
+                <img src="art_pokemon/Umbreon.png">
                 <p class="media_title">Umbreon</p>
             </div>
             <div class="media_element">
                 <img src="art_pokemon/wooper.png">
                 <p class="media_title">Wooper</p>
             </div>
+            </div>
         </div>
 
     </body>
+
 
 </html>
