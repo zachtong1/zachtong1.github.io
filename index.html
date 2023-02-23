@@ -2,33 +2,43 @@
 
     <head>
         <title>Zach Tong</title>
-        <link rel="icon" type="image/x-icon" href="wooper.png">
+        <link rel="icon" type="image/x-icon" href="favicon.png">
         <link rel="stylesheet" href="style.css">
     </head>
 
     <script src="main.js"></script>
-    <script>var f_number=2;</script>
+    <script>
+        var f_number=3;
+        fadeInAnimation();
+    </script>
 
-    <body onload="fadeInAnimation()">
+    <body>
+        <!-- HEADER --> 
         <h1>Zach Tong</h1>
-        <img src="wooper.png" class="header_image" width="70px" height="70px"> 
+
         <br/>
-        <ul> 
+        <div class="header_bin">
+            <img src="ampharos.png" class="header_image clickable" width="120px" height="120px" onclick="clickedAmpharos()"> 
+            <p class="hello_text invisible">hi.</p>
+        </div>
+        <br/><br/>
+
+        <ul class="navbar"> 
             <li class="current_page"> 
                 <a href="index.html"> Main </a> 
                 <div class="triangle"></div> 
-            </li> 
-            <li onclick="errorMessage()"> <a href="#">Resume</a></li> 
-            <li> <a href="art.html">Art</a></li> 
-            <li onclick="errorMessage()"> <a href="#">Blog</a></li> 
-            <li onclick="errorMessage()"> <a href="#">Notes</a></li> 
+            </li>
+            <li> <a href="art.html">Art</a></li>
+            <li> <a href="posts.html">Posts</a></li> 
         </ul>
 
         <h2 class="f1 not-visible">About Me</h2>
-        <div class="f2 not-visible">
-            <p>Hi, my name is Zach Tong. </p>
-            <p>I'm currently a Rutgers senior majoring in mechanical engineering, with a minor in chemistry.</p>
-        </div>
+        <p class="f2 not-visible">Hi, my name is Zach. </p>
+        <p class="f3 not-visible">I'm majoring in mechE with a chemistry minor.</p>
+
+
+        
+
 
     </body>
 

@@ -2,33 +2,40 @@
 
     <head>
         <title>Art</title>
-        <link rel="icon" type="image/x-icon" href="wooper.png">
+        <link rel="icon" type="image/x-icon" href="favicon.png">
         <link rel="stylesheet" href="style.css">
     </head>
 
     <script src="main.js"></script>
-    <script>var f_number=3;</script>
-    <script>var autoScrolling=1;</script>
+    <script>
+        var f_number=2;
+        fadeInAnimation();
+        var autoScrolling=1;
+    </script>
 
-    <body onload="fadeInAnimation()">    
+    <body>    
+        <!-- HEADER --> 
         <h1>Zach Tong</h1>
-        <img src="wooper.png" class="header_image" width="70px" height="70px"> 
+
         <br/>
-        <ul> 
-            <li> <a href="index.html">Main</a></li> 
-            <li onclick="errorMessage()"> <a href="#">Resume</a></li> 
+        <div class="header_bin">
+            <img src="ampharos.png" class="header_image clickable" width="120px" height="120px" onclick="clickedAmpharos()"> 
+            <p class="hello_text invisible">hi.</p>
+        </div>
+        <br/><br/>
+
+        <ul class="navbar"> 
+            <li> <a href="index.html">Main</a></li>
             <li class="current_page"> 
                 <a href="art.html"> Art </a> 
                 <div class="triangle"></div> 
-            </li> 
-            <li onclick="errorMessage()"> <a href="#">Blog</a></li> 
-            <li onclick="errorMessage()"> <a href="#">Notes</a></li> 
+            </li>
+            <li> <a href="posts.html">Posts</a></li> 
         </ul>
 
         <h2 class="f1 not-visible">Pokemon</h2>
-        <p class="f2 not-visible">Some minimalistic Pokemon I drew for Tiktok, using Paint.net.</p>
-        <div class="f3 not-visible">
-            <button onclick="toggleAutoScroll()">Toggle Auto Scroll</button>
+        <div class="f2 not-visible">
+            <button onclick="toggleAutoScroll()" style="font-family:'Lucida Sans'">Auto Scroll</button>
             <div class="media_carousel autoScroll">
             <div class="media_element">
                 <img src="art_pokemon/bulbasaur.png">
