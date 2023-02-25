@@ -127,7 +127,20 @@
 
     <h2>Git</h2> 
     <ul>
-        <li class="post">$ git add -A <br>$git commit -m "commit message" <br>$ git push -u origin main</li>
+        <li class="post">
+            Add = changes go from local repository to staging
+            <br>Commit = snapshot of staging 
+            <br>Push = send committed changes to remote repository
+            <br>Before pushing, Git checks if there are are changes on the remote repository that you do not have locally. If so, the push is rejected to avoid overwriting files.
+            <br>Either $git pull to merge the remote changes to local (conflicts must be manually resolved), or $git push --force
+        </li>
+        <li class="post">
+            $ git add -A 
+            <br>$ git commit -m "commit message" 
+            <br>$ git push -u origin main
+        </li>
+        <li class="post"> $ git status to see changes in staging, etc
+        </li>
     </ul>
     <br><br>
     
