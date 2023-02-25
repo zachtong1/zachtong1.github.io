@@ -10,9 +10,9 @@ function clickedAmpharos() {
         var audio = new Audio("ampharos_noise.mp3");
         audio.play();
         var hello_text = document.querySelector(".hello_text");
-        hello_text.classList.remove("invisible");
+        hello_text.classList.remove("invisible_hi");
         setTimeout(function() {
-            hello_text.classList.add("invisible");
+            hello_text.classList.add("invisible_hi");
         }, 300);
         const options = ["hi.","hi.","hi.","hi.","hi.","hi.","hi.","hi.","yo.","sup"];
         const randomIndex = Math.floor(Math.random() * options.length);
@@ -39,25 +39,3 @@ function fadeInAnimation() {
     }
 }
 
-function toggleAutoScroll() {
-    let container = document.querySelector(".media_carousel");
-    if (autoScrolling==1) {
-        autoScrolling=0;
-        container.classList.replace("autoScroll","noautoScroll");
-    }
-    else {
-        autoScrolling=1;
-        container.classList.replace("noautoScroll","autoScroll");
-    }
-}
-
-function autoScroll() {
-    let container = document.querySelector(".media_carousel");
-    if (autoScrolling==1) {
-        container.scrollLeft += 1;
-    }
-    if (autoScrolling==1 && container.scrollLeft >= container.scrollWidth - container.clientWidth) {
-        container.scrollLeft = 0;}
-}
-
-setInterval(autoScroll, 50);

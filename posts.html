@@ -8,21 +8,19 @@
 
     <script src="main.js"></script>
     <script>
-        var f_number=6;
+        var f_number=3;
         fadeInAnimation();
     </script>
 
     <body>
         <!-- HEADER --> 
         <h1>Zach Tong</h1>
-
-        <br/>
+        <br>
         <div class="header_bin">
             <img src="ampharos.png" class="header_image clickable" width="120px" height="120px" onclick="clickedAmpharos()"> 
-            <p class="hello_text invisible">hi.</p>
+            <p class="hello_text invisible_hi">hi.</p>
         </div>
-        <br/><br/>
-
+        <br><br>
         <ul class="navbar"> 
             <li> <a href="index.html">Main</a></li>
             <li> <a href="art.html">Art</a></li>
@@ -33,12 +31,14 @@
         </ul>
 
         <h2 class="f1 not-visible">HTML/JS</h2>
-        <p class="f2 not-visible">Match the Note to the Piano Key</p>
-        <p class="f3 not-visible">Customizable Quiz/Flashcards with Categories</p>
-        <p class="f4 not-visible">Autoscrolling Media Gallery</p>
-        <p class="f5 not-visible">Timed CSS Animations</p>
-        <p class="f6 not-visible">CSS Positioning</p>
-        
+        <ul>
+            <li class="f2 not-visible post"> <a class="list_link" href="posts/major_minor_flashcards.html">Major & Minor Scale Flashcards</a></li>
+            <li class="f3 not-visible post"> <a class="list_link" href="posts/reference_sheet.html">Reference Sheet</a></li>
+        </ul>        
+
+        <p style="display:none">match the note to the piano key</p>
+        <p style="display:none">autoscrolling media Gallery</p>
+        <p style="display:none">timed css animations</p>
 
     </body>
 

@@ -27,8 +27,8 @@ body {
 }
 
 .header_bin {
-  position:relative;
-  text-align:center;
+    position:relative;
+    text-align:center;
 }
 
 .hello_text {
@@ -38,17 +38,38 @@ body {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+li.post {
+    margin:10px;
+}
+
+li a.list_link {
+    text-decoration: inherit;
+    color: inherit;
+}
+
+li a.list_link:hover {
+    font-weight:bold;
+}
+
 .not-visible {
     opacity:0;
 }
 
-.invisible {
+.invisible_hi {
     opacity:0;
     transition: opacity 0.2s ease-out;
 }
 
+.invisible {
+    display:none;
+}
+
 .fade-in {
     animation: fadeIn 0.5s;
+}
+
+.fade-in_slow {
+    animation: fadeIn 3s;
 }
 
 @keyframes fadeIn {
@@ -101,10 +122,6 @@ ul.navbar li a:hover {
 }
 
 /* Art Page */
-
-.media_carousel {
-    display:none;
-}
 
 .media_carousel {
     display:grid;
