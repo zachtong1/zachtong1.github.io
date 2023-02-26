@@ -7,7 +7,7 @@ function clickedAmpharos() {
 
     if (clickedAmpharosCount<10) {
         clickedAmpharosCount+=1;
-        var audio = new Audio("ampharos_noise.mp3");
+        var audio = new Audio("sounds/ampharos_noise.mp3");
         audio.play();
         var hello_text = document.querySelector(".hello_text");
         hello_text.classList.remove("invisible_hi");
@@ -24,7 +24,7 @@ function clickedAmpharos() {
         var header_image = document.querySelector(".header_image");
         header_image.src = "caterpie.png";
         header_image.classList.remove("clickable");
-        var audio = new Audio("caterpie_noise.mp3");
+        var audio = new Audio("sounds/caterpie_noise.mp3");
         audio.play();
     }
 }
