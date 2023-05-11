@@ -8,7 +8,7 @@
 
     <script src="main.js"></script>
     <script>
-        var f_number=4;
+        var f_number=3;
         fadeInAnimation();
     </script>
 
@@ -17,7 +17,7 @@
         <h1>Zach Tong</h1>
         <br>
         <div class="header_bin">
-            <img src="ampharos.png" class="header_image clickable" width="120px" height="120px" onclick="clickedAmpharos()"> 
+            <img src="tall.png" class="header_image clickable" width="120px" height="120px" onclick="clickedAmpharos()"> 
             <p class="hello_text invisible_hi">hi.</p>
         </div>
         <br><br>
@@ -31,10 +31,11 @@
         </ul>
 
         <h2 class="f1 not-visible">About Me</h2>
-        <p class="f2 not-visible">Hi, my name is Zach. </p>
-        <p class="f3 not-visible">I'm majoring in mechE with a chemistry minor.</p>
-        <p class="f4 not-visible resumeText">My resume can be found <a onclick="function1()" class="clickable"> <u>here</u> </a> (pdf).</p>
-        <img class="resumePic invisible" src="IMG_1.jpg" length="400px" width="400px">
+        <p class="f2 not-visible">Hi, my name is Zach.</p>
+        <p class="f3 not-visible resumeText">My resume can be found <a onclick="function1()" class="clickable"> <u>here</u> </a> (pdf).</p>
+        <img class="resumePic invisible" src="IMG_1.jpg">
+        <p class="invisible resumeLink"> <a onclick="function2()" class="clickable"> <u>Zach Tong Resume 2023</u> </a> (pdf)</p>
+        <img class="resumePic1 invisible" src="IMG_2.jpg">
 
     </body>
 
@@ -44,7 +45,18 @@
             audio.play();
             var target_element = document.querySelector(".resumePic");
             target_element.classList.replace("invisible","fade-in_slow");
+            var target_element = document.querySelector(".resumeLink");
+            target_element.classList.replace("invisible","fade-in_slow");
             var target_element1 = document.querySelector(".resumeText");
+            target_element1.classList.add("invisible");
+        }
+
+        function function2() {
+            var audio = new Audio("sounds/cave21.mp3");
+            audio.play();
+            var target_element = document.querySelector(".resumePic1");
+            target_element.classList.replace("invisible","fade-in_slow");
+            var target_element1 = document.querySelector(".resumeLink");
             target_element1.classList.add("invisible");
         }
     </script>

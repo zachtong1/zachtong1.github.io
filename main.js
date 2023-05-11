@@ -5,7 +5,7 @@ function errorMessage() {
 var clickedAmpharosCount = 0;
 function clickedAmpharos() {
 
-    if (clickedAmpharosCount<10) {
+    if (clickedAmpharosCount<4) {
         clickedAmpharosCount+=1;
         var audio = new Audio("sounds/ampharos_noise.mp3");
         audio.play();
@@ -14,12 +14,12 @@ function clickedAmpharos() {
         setTimeout(function() {
             hello_text.classList.add("invisible_hi");
         }, 300);
-        const options = ["hi.","hi.","hi.","hi.","hi.","hi.","hi.","hi.","yo.","sup"];
+        const options = ["hi.","yo.","sup"];
         const randomIndex = Math.floor(Math.random() * options.length);
         const newText = options[randomIndex];
         hello_text.textContent = newText;
     }
-    else if (clickedAmpharosCount==10) {
+    else if (clickedAmpharosCount==4) {
         clickedAmpharosCount+=1;
         var header_image = document.querySelector(".header_image");
         header_image.src = "caterpie.png";
@@ -30,7 +30,7 @@ function clickedAmpharos() {
 }
 
 function fadeInAnimation() {
-    var timeDelay = 100; /*millisec*/
+    var timeDelay = 300; /*millisec*/
     for (let i=1; i<=f_number; i++) {
         setTimeout(function() {
             var f_target_element = document.querySelector(".f"+i);
