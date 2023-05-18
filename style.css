@@ -45,12 +45,12 @@ li.post {
     margin:10px;
 }
 
-li a.list_link {
+a.list_link {
     text-decoration: inherit;
     color: inherit;
 }
 
-li a.list_link:hover {
+a.list_link:hover {
     font-weight:bold;
 }
 

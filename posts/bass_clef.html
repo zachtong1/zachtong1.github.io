@@ -1,0 +1,554 @@
+<html>
+
+<head>
+    <title>Bass Clef</title>
+    <link rel="icon" href="../favicon.png">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<script src="main_p.js"></script>
+<script>
+    var totalTopics = 3;
+    var totalQuestions = 52;
+    var f_number=4;
+    fadeInAnimation();
+</script>
+
+<body>
+    <!-- Header --> 
+    <h1>Zach Tong</h1>
+    <br>
+    <div class="header_bin">
+        <img src="../tall.png" class="header_image clickable" width="120px" height="120px" onclick="clickedAmpharos()"> 
+        <p class="hello_text invisible_hi">hi.</p>
+    </div>
+    <br><br>
+    <ul class="navbar"> 
+        <li> <a href="../index.html">Main</a></li>
+        <li class="current_page"> 
+            <a href="../posts.html">Posts</a>
+            <div class="triangle"></div>
+        </li> 
+    </ul>
+
+    <h2 class="f1 not-visible">Bass Clef Flashcards ʕ•ᴥ•ʔ</h2>
+
+    <!--Select Topics-->
+    <form id="chooseTopics" class="f2 not-visible">
+        Notes to include: <br> <br>
+        <input id="topic1" type="checkbox">Bass Clef</input> <br>
+        <input id="topic2" type="checkbox">Bass Clef - Above/Below Staff</input> <br>
+        <input id="topic3" type="checkbox">Treble Clef - Above/Below Staff</input> <br>
+    </form>
+
+    <!--Start Button-->
+    <button onclick="start1()" id="startButton" class="f3 not-visible">Start</button>
+
+    <!--Question Counter-->
+    <p id="qcounter" class="invisible">heeheehoohoo</p>
+
+    <!--Questions-->
+    <div>
+        <div class="q1 invisible"> 
+            The C major chord is:
+            <div class="q1_topic invisible">1</div>
+            <input class="input1" type="text">
+        </div>
+        <div class="q2 invisible"> 
+            The relative minor of C major is:
+            <div class="q2_topic invisible">1</div>
+            <input class="input2" type="text">
+        </div>
+        <div class="q3 invisible"> 
+            Which major scale has 1 sharp?
+            <div class="q3_topic invisible">1</div>
+            <input class="input3" type="text">
+        </div>
+        <div class="q4 invisible"> 
+            The G major chord is:
+            <div class="q4_topic invisible">1</div>
+            <input class="input4" type="text">
+        </div>
+        <div class="q5 invisible"> 
+            The relative minor of G major is:
+            <div class="q5_topic invisible">1</div>
+            <input class="input5" type="text">
+        </div>
+        <div class="q6 invisible"> 
+            List the sharp notes in G major (in circle of fifths order):
+            <div class="q6_topic invisible">1</div>
+            <input class="input6" type="text">
+        </div>
+        <div class="q7 invisible"> 
+            To make a major (135) chord minor, lower the ___ a half-step.
+            <div class="q7_topic invisible">5</div>
+            <input class="input7" type="text">
+        </div>
+        <div class="q8 invisible"> 
+            The ___th note of a major scale is its relative minor.
+            <div class="q8_topic invisible">5</div>
+            <input class="input8" type="text">
+        </div>
+        <div class="q9 invisible"> 
+            List the major scales with 1&#8658;5 sharps:
+            <div class="q9_topic invisible">5</div>
+            <input class="input9" type="text">
+        </div>
+        <div class="q10 invisible"> 
+            List the major scales with 1&#8658;6 flats:
+            <div class="q10_topic invisible">5</div>
+            <input class="input10" type="text">
+        </div>
+        <div class="q11 invisible"> 
+            Which major scale has 2 sharps?
+            <div class="q11_topic invisible">1</div>
+            <input class="input11" type="text">
+        </div>
+        <div class="q12 invisible"> 
+            The D major chord is:
+            <div class="q12_topic invisible">1</div>
+            <input class="input12" type="text">
+        </div>
+        <div class="q13 invisible"> 
+            The relative minor of D major is:
+            <div class="q13_topic invisible">1</div>
+            <input class="input13" type="text">
+        </div>
+        <div class="q14 invisible"> 
+            List the sharp notes in D major (in circle of fifths order):
+            <div class="q14_topic invisible">1</div>
+            <input class="input14" type="text">
+        </div>
+        <div class="q15 invisible"> 
+            Which major scale has 3 sharps?
+            <div class="q15_topic invisible">2</div>
+            <input class="input15" type="text">
+        </div>
+        <div class="q16 invisible"> 
+            The A major chord is:
+            <div class="q16_topic invisible">2</div>
+            <input class="input16" type="text">
+        </div>
+        <div class="q17 invisible"> 
+            The relative minor of A major is:
+            <div class="q17_topic invisible">2</div>
+            <input class="input17" type="text">
+        </div>
+        <div class="q18 invisible"> 
+            List the sharp notes in A major (in circle of fifths order):
+            <div class="q18_topic invisible">2</div>
+            <input class="input18" type="text">
+        </div>
+        <div class="q19 invisible"> 
+            Which major scale has 4 sharps?
+            <div class="q19_topic invisible">2</div>
+            <input class="input19" type="text">
+        </div>
+        <div class="q20 invisible"> 
+            The E major chord is:
+            <div class="q20_topic invisible">2</div>
+            <input class="input20" type="text">
+        </div>
+        <div class="q21 invisible"> 
+            The relative minor of E major is:
+            <div class="q21_topic invisible">2</div>
+            <input class="input21" type="text">
+        </div>
+        <div class="q22 invisible"> 
+            List the sharp notes in E major (in circle of fifths order):
+            <div class="q22_topic invisible">2</div>
+            <input class="input22" type="text">
+        </div>
+        <div class="q23 invisible"> 
+            Which major scale has 5 sharps?
+            <div class="q23_topic invisible">2</div>
+            <input class="input23" type="text">
+        </div>
+        <div class="q24 invisible"> 
+            The B major chord is:
+            <div class="q24_topic invisible">2</div>
+            <input class="input24" type="text">
+        </div>
+        <div class="q25 invisible"> 
+            The relative minor of B major is:
+            <div class="q25_topic invisible">2</div>
+            <input class="input25" type="text">
+        </div>
+        <div class="q26 invisible"> 
+            List the sharp notes in B major (in circle of fifths order):
+            <div class="q26_topic invisible">2</div>
+            <input class="input26" type="text">
+        </div>
+        <div class="q27 invisible"> 
+            Which major scale has 1 flat?
+            <div class="q27_topic invisible">3</div>
+            <input class="input27" type="text">
+        </div>
+        <div class="q28 invisible"> 
+            The F major chord is:
+            <div class="q28_topic invisible">3</div>
+            <input class="input28" type="text">
+        </div>
+        <div class="q29 invisible"> 
+            The relative minor of F major is:
+            <div class="q29_topic invisible">3</div>
+            <input class="input29" type="text">
+        </div>
+        <div class="q30 invisible"> 
+            List the flat notes in F major (in circle of fifths order):
+            <div class="q30_topic invisible">3</div>
+            <input class="input30" type="text">
+        </div>
+        <div class="q31 invisible"> 
+            Which major scale has 2 flats?
+            <div class="q31_topic invisible">3</div>
+            <input class="input31" type="text">
+        </div>
+        <div class="q32 invisible"> 
+            The Bb major chord is:
+            <div class="q32_topic invisible">3</div>
+            <input class="input32" type="text">
+        </div>
+        <div class="q33 invisible"> 
+            The relative minor of Bb major is:
+            <div class="q33_topic invisible">3</div>
+            <input class="input33" type="text">
+        </div>
+        <div class="q34 invisible"> 
+            List the flat notes in Bb major (in circle of fifths order):
+            <div class="q34_topic invisible">3</div>
+            <input class="input34" type="text">
+        </div>
+        <div class="q35 invisible"> 
+            Which major scale has 3 flats?
+            <div class="q35_topic invisible">3</div>
+            <input class="input35" type="text">
+        </div>
+        <div class="q36 invisible"> 
+            The Eb major chord is:
+            <div class="q36_topic invisible">3</div>
+            <input class="input36" type="text">
+        </div>
+        <div class="q37 invisible"> 
+            The relative minor of Eb major is:
+            <div class="q37_topic invisible">3</div>
+            <input class="input37" type="text">
+        </div>
+        <div class="q38 invisible"> 
+            List the flat notes in Eb major (in circle of fifths order):
+            <div class="q38_topic invisible">3</div>
+            <input class="input38" type="text">
+        </div>
+        <div class="q39 invisible"> 
+            Which major scale has 4 flats?
+            <div class="q39_topic invisible">4</div>
+            <input class="input39" type="text">
+        </div>
+        <div class="q40 invisible"> 
+            The Ab major chord is:
+            <div class="q40_topic invisible">4</div>
+            <input class="input40" type="text">
+        </div>
+        <div class="q41 invisible"> 
+            The relative minor of Ab major is:
+            <div class="q41_topic invisible">4</div>
+            <input class="input41" type="text">
+        </div>
+        <div class="q42 invisible"> 
+            List the flat notes in Ab major (in circle of fifths order):
+            <div class="q42_topic invisible">4</div>
+            <input class="input42" type="text">
+        </div>
+        <div class="q43 invisible"> 
+            Which major scale has 5 flats?
+            <div class="q43_topic invisible">4</div>
+            <input class="input43" type="text">
+        </div>
+        <div class="q44 invisible"> 
+            The Db major chord is:
+            <div class="q44_topic invisible">4</div>
+            <input class="input44" type="text">
+        </div>
+        <div class="q45 invisible"> 
+            The relative minor of Db major is:
+            <div class="q45_topic invisible">4</div>
+            <input class="input45" type="text">
+        </div>
+        <div class="q46 invisible"> 
+            List the flat notes in Db major (in circle of fifths order):
+            <div class="q46_topic invisible">4</div>
+            <input class="input46" type="text">
+        </div>
+        <div class="q47 invisible"> 
+            Which major scale has 6 flats?
+            <div class="q47_topic invisible">4</div>
+            <input class="input47" type="text">
+        </div>
+        <div class="q48 invisible"> 
+            The Gb major chord is:
+            <div class="q48_topic invisible">4</div>
+            <input class="input48" type="text">
+        </div>
+        <div class="q49 invisible"> 
+            The relative minor of Gb major is:
+            <div class="q49_topic invisible">4</div>
+            <input class="input49" type="text">
+        </div>
+        <div class="q50 invisible"> 
+            List the flat notes in Gb major (in circle of fifths order):
+            <div class="q50_topic invisible">4</div>
+            <input class="input50" type="text">
+        </div>
+        <div class="q51 invisible"> 
+            List the notes which are flat in a key signature with 1, 2, 3, 4, 5, and 6 flats:
+            <div class="q51_topic invisible">5</div>
+            <input class="input51" type="text">
+        </div>
+        <div class="q52 invisible"> 
+            List the notes which are sharp in a key signature with 1, 2, 3, 4, and 5 sharps:
+            <div class="q52_topic invisible">5</div>
+            <input class="input52" type="text">
+        </div>
+    </div>
+
+    <!--Correct/Incorrect Text-->
+    <p class="correct_text invisible">Correct &#10004;</p>
+    <p class="incorrect_text invisible">Incorrect</p>
+
+    <!--Answers-->
+    <div>
+        <p class="a1 invisible">CEG</p>
+        <p class="a2 invisible">A</p>
+        <p class="a3 invisible">G</p>
+        <p class="a4 invisible">GBD</p>
+        <p class="a5 invisible">E</p>
+        <p class="a6 invisible">F</p>
+        <p class="a7 invisible">3</p>
+        <p class="a8 invisible">6</p>
+        <p class="a9 invisible">GDAEB</p>
+        <p class="a10 invisible">FBbEbAbDbGb</p>
+        <p class="a11 invisible">D</p>
+        <p class="a12 invisible">DF#A</p>
+        <p class="a13 invisible">B</p>
+        <p class="a14 invisible">FC</p>
+        <p class="a15 invisible">A</p>
+        <p class="a16 invisible">AC#E</p>
+        <p class="a17 invisible">F#</p>
+        <p class="a18 invisible">FCG</p>
+        <p class="a19 invisible">E</p>
+        <p class="a20 invisible">EG#B</p>
+        <p class="a21 invisible">C#</p>
+        <p class="a22 invisible">FCGD</p>
+        <p class="a23 invisible">B</p>
+        <p class="a24 invisible">BD#F#</p>
+        <p class="a25 invisible">G#</p>
+        <p class="a26 invisible">FCGDA</p>
+        <p class="a27 invisible">F</p>
+        <p class="a28 invisible">FAC</p>
+        <p class="a29 invisible">D</p>
+        <p class="a30 invisible">Bb</p>
+        <p class="a31 invisible">Bb</p>
+        <p class="a32 invisible">BbDF</p>
+        <p class="a33 invisible">G</p>
+        <p class="a34 invisible">BE</p>
+        <p class="a35 invisible">Eb</p>
+        <p class="a36 invisible">EbGAb</p>
+        <p class="a37 invisible">C</p>
+        <p class="a38 invisible">BEA</p>
+        <p class="a39 invisible">Ab</p>
+        <p class="a40 invisible">AbCEb</p>
+        <p class="a41 invisible">F</p>
+        <p class="a42 invisible">BEAD</p>
+        <p class="a43 invisible">Db</p>
+        <p class="a44 invisible">DbFAb</p>
+        <p class="a45 invisible">Bb</p>
+        <p class="a46 invisible">BEADG</p>
+        <p class="a47 invisible">Gb</p>
+        <p class="a48 invisible">GbBbDb</p>
+        <p class="a49 invisible">Eb</p>
+        <p class="a50 invisible">BEADGC</p>
+        <p class="a51 invisible">BEADGC</p>
+        <p class="a52 invisible">FCGDA</p>
+    </div>
+
+    <!--Check, Next, Previous Button-->
+    <button onclick="check()" id="checkButton" class="invisible">Check </button>
+    <button onclick="prevQuestion()" id="prevButton" class="invisible">&#129052;</button>
+    <button onclick="nextQuestion()" id="nextButton" class="invisible">&#129054;</button>
+
+    <ul id="instructions" class="invisible">
+        <li>use capital letters for notes; no spaces or commas</li>
+        <li>navigate flashcards with Enter + Arrow Keys</li>
+        <li>refresh page to restart</li>
+        <li><a href="https://www.musicca.com/piano" target="_blank" class="list_link"><u>online piano</u></a></li>
+        <li><a href="https://appliedguitartheory.com/wp-content/uploads/2021/01/circle-of-fifths-full.png" target="_blank" class="list_link"><u>circle of 5ths</u></a></li>
+    </ul>
+
+    <img src="piano.png" id="piano" class="invisible" length="200px" width="200px"> <br> <br>
+    
+</body>
+
+<script>
+
+    var q_list = []; /*q_list is the included questions (ie, w a selected topic)*/
+    var q_index = 0; /*current index of q_list*/
+    var q_list1 = []; /*q_list1 is the selected topics*/
+    var correct_text = document.querySelector(".correct_text");
+    var incorrect_text = document.querySelector(".incorrect_text");
+
+    function start1() {
+        iii=0; 
+        /*for each topic, if it is checked, add it to q_list1.*/
+        for (let i=1; i<=totalTopics; i++) {
+            const topicCheck = document.querySelector("#topic"+i);
+            if (topicCheck.checked == true) {
+                q_list1[iii]=i;
+                iii+=1;
+            }
+        }
+        /*checks that at least one topic is selected*/
+        if (q_list1.length==1) {
+            alert("Select at least one major scale.");
+            return;
+        }
+        else {
+            start();
+        }
+    }
+    
+    function start() {
+        const chooseTopics = document.querySelector("#chooseTopics");
+        chooseTopics.classList.add("invisible");
+        const startButton = document.querySelector("#startButton");
+        startButton.classList.add("invisible");
+
+        const piano = document.querySelector("#piano");
+        piano.classList.remove("invisible");
+        const instructions = document.querySelector("#instructions");
+        instructions.classList.remove("invisible");
+
+        const target_element2 = document.querySelector("#checkButton");
+        target_element2.classList.remove("invisible");
+        const target_element3 = document.querySelector("#nextButton");
+        target_element3.classList.remove("invisible");
+        const target_element4 = document.querySelector("#prevButton");
+        target_element4.classList.remove("invisible");
+        const target_element5 = document.querySelector("#qcounter");
+        target_element5.classList.remove("invisible");
+
+        var q_list2 = new Array(totalQuestions).fill(0); /*preallocate*/
+        for (let i=1; i<=totalQuestions; i++) { /*q_list2 is each question's topic*/
+            const questionTopicCheck = document.querySelector(".q"+i+"_topic");
+            q_list2[i-1] = questionTopicCheck.textContent;
+        }
+        
+        var ii = 0;
+        for (let i=0; i<=totalQuestions-1; i++) { /*q_list is questions to include (ie, w a selected topic)*/
+            if (q_list1.includes(parseInt(q_list2[i]))==true) {
+                q_list[ii]=i+1;
+                ii +=1;
+            }
+        }
+
+        q_list.sort(() => Math.random() - 0.5);
+
+        const qcounter = document.querySelector("#qcounter");
+        qcounter.textContent = (q_index+1)+"/"+q_list.length;
+        const target_element1 = document.querySelector(".q"+q_list[q_index]);
+        target_element1.classList.remove("invisible");
+        const input1 = document.querySelector(".input"+q_list[q_index]);
+        input1.focus() = true;
+    }
+
+    function check() {
+        const input = document.querySelector(".input"+q_list[q_index]);
+        const answer = document.querySelector(".a"+q_list[q_index]);
+        answer.classList.remove("invisible");
+
+        if (input.value==answer.textContent) {
+            correct_text.classList.remove("invisible");
+            incorrect_text.classList.add("invisible");
+            var audio = new Audio("../sounds/duolingo-correct.mp3");
+            audio.play();
+        }
+        else {
+            incorrect_text.classList.remove("invisible");
+            correct_text.classList.add("invisible");
+            var audio = new Audio("../sounds/boat_horn.mp3");
+            audio.play();
+        }
+    }
+
+    function nextQuestion() {
+        
+        var target_element = document.querySelector(".q"+q_list[q_index]);
+        target_element.classList.add("invisible");
+        const answer = document.querySelector(".a"+q_list[q_index]);
+        answer.classList.add("invisible");
+        const input2 = document.querySelector(".input"+q_list[q_index]);
+
+        correct_text.classList.add("invisible");
+        incorrect_text.classList.add("invisible");
+
+        if (q_index<q_list.length-1) {
+            q_index +=1;
+        }
+        else {
+            q_index=0;
+        }
+
+        const qcounter = document.querySelector("#qcounter");
+        qcounter.textContent = (q_index+1)+"/"+q_list.length;
+
+        var target_element = document.querySelector(".q"+q_list[q_index]);
+        target_element.classList.remove("invisible");
+
+        const input1 = document.querySelector(".input"+q_list[q_index]);
+        input1.focus() = true;
+        
+    }
+
+    function prevQuestion() {
+        
+        var target_element = document.querySelector(".q"+q_list[q_index]);
+        target_element.classList.add("invisible");
+        const answer = document.querySelector(".a"+q_list[q_index]);
+        answer.classList.add("invisible");
+
+        correct_text.classList.add("invisible");
+        incorrect_text.classList.add("invisible");
+
+        if (q_index>0) {
+            q_index -=1;
+        }
+        else {
+            q_index=q_list.length-1;
+        }
+
+        const qcounter = document.querySelector("#qcounter");
+        qcounter.textContent = (q_index+1)+"/"+q_list.length;
+
+        var target_element = document.querySelector(".q"+q_list[q_index]);
+        target_element.classList.remove("invisible");
+
+        const input1 = document.querySelector(".input"+q_list[q_index]);
+        input1.focus() = true;
+
+    }
+
+    document.addEventListener('keydown', pressKeys);
+    function pressKeys() {
+        if (event.key === 'Enter') {
+            check();
+        }
+        if (event.key === 'ArrowRight') {
+            nextQuestion();
+        }
+        if (event.key === 'ArrowLeft') {
+            prevQuestion();
+        }
+    }
+
+</script>
+
+</html>

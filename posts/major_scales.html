@@ -398,8 +398,9 @@
     var correct_text = document.querySelector(".correct_text");
     var incorrect_text = document.querySelector(".incorrect_text");
 
-    function start1() { /*checks that at least one topic is selected*/
+    function start1() {
         iii=0; 
+        /*for each topic, if it is checked, add it to q_list1.*/
         for (let i=1; i<=totalTopics; i++) {
             const topicCheck = document.querySelector("#topic"+i);
             if (topicCheck.checked == true) {
@@ -407,7 +408,7 @@
                 iii+=1;
             }
         }
-
+        /*checks that at least one topic is selected*/
         if (q_list1.length==1) {
             alert("Select at least one major scale.");
             return;
@@ -417,7 +418,6 @@
         }
     }
     
-
     function start() {
         const chooseTopics = document.querySelector("#chooseTopics");
         chooseTopics.classList.add("invisible");
@@ -446,27 +446,20 @@
         
         var ii = 0;
         for (let i=0; i<=totalQuestions-1; i++) { /*q_list is questions to include (ie, w a selected topic)*/
-            
             if (q_list1.includes(parseInt(q_list2[i]))==true) {
                 q_list[ii]=i+1;
                 ii +=1;
             }
-
         }
 
-        /*alert(q_list);*/
         q_list.sort(() => Math.random() - 0.5);
-        /*alert(q_list);*/
 
         const qcounter = document.querySelector("#qcounter");
         qcounter.textContent = (q_index+1)+"/"+q_list.length;
-
         const target_element1 = document.querySelector(".q"+q_list[q_index]);
         target_element1.classList.remove("invisible");
-
         const input1 = document.querySelector(".input"+q_list[q_index]);
         input1.focus() = true;
-
     }
 
     function check() {
@@ -511,12 +504,10 @@
 
         var target_element = document.querySelector(".q"+q_list[q_index]);
         target_element.classList.remove("invisible");
-        
 
         const input1 = document.querySelector(".input"+q_list[q_index]);
         input1.focus() = true;
         
-
     }
 
     function prevQuestion() {
@@ -559,9 +550,6 @@
             prevQuestion();
         }
     }
-
-    
-    
 
 </script>
 

@@ -1,0 +1,71 @@
+<html>
+
+    <head>
+        <title>Senior Project</title>
+        <link rel="icon" href="../favicon.png">
+        <link rel="stylesheet" href="../style.css">
+    </head>
+
+    <script src="main_p.js"></script>
+
+    <body>    
+        <!-- HEADER --> 
+        <h1>Zach Tong</h1>
+        <br>
+        <div class="header_bin">
+            <img src="../tall.png" class="header_image clickable" width="120px" height="120px" onclick="clickedAmpharos()"> 
+            <p class="hello_text invisible_hi">hi.</p>
+        </div>
+        <br><br>
+
+        <ul class="navbar"> 
+            <li> <a href="../index.html">Main</a></li>
+            <li class="current_page"> 
+                <a href="../posts.html">Posts</a>
+                <div class="triangle"></div>
+            </li> 
+        </ul>
+
+        <h2>Senior Project: Auto-Sorting Gantry (May 2023)</h2>
+        
+        <li>Team: Brian Catalano, Zach Tong, Altin Ukella, Sen Li, Xinming Han, Louis Bercier, Justin Lin</li>
+        <li>Advisor: <a href="https://mae.rutgers.edu/xi-gu" target="_blank" class="list_link"><u>Dr. Xi Gu</u></a></li>
+        <br>
+
+        <video width="640" height="360" controls muted>
+            <source src="senior_project_video.mp4" type="video/mp4">
+        </video>
+
+        <h3>Motivation & Objective</h3>
+        <p style="text-indent:2em;line-height:1.5;">
+            In large retail stores, items received from deliveries are often manually sorted (categorized) into totes before being put on shelves. 
+            Manual sorting can be time-consuming, so automating this process would be useful.
+        </p>
+        <p style="text-indent:2em;line-height:1.5;">
+            Our objective was to create an autonomous tabletop-sized gantry which can locate items positioned randomly within a predefined "pickup area", then sort them into totes based on color. 
+            For simplicity, the items used were red/yellow/blue cubes of uniform size. 
+        </p>
+        <h3>Conceptual Design</h3>
+        <p style="text-indent:2em;line-height:1.5;">
+            We chose a vacuum pump as the pickup mechanism. 
+            The vacuum moves in the 2 "horizontal" (X/Y) axes using a stepper motor/belt-and-pulley/wheeled plate along a V-slot rail, and in the "vertical" (Z) axis with a stepper motor/lead screw (the latter which was bought as a pre-built part). 
+            Limit switches are used to zero the position of the vacuum when the system initially starts. 
+        </p>
+        <p style="text-indent:2em;line-height:1.5;">
+            Arduino was chosen as the microcontroller; a relay controls the vacuum, and a CNC shield connects the stepper motors and their drivers/battery supply. 
+            A Pixy2 camera was chosen for position/color detection (this is a relatively inexpensive camera which interfaces with Arduino). 
+            The camera is fixed to a stationary mount, looking down on the pickup area.
+        </p>
+        <p style="text-indent:2em;line-height:1.5;">
+            Calculations verified that the vacuum could lift the weight of the cubes, and the stepper motors provided enough torque to move the weight of the frame. 
+            Parts were ordered from Amazon and McMaster; the total cost was $537.
+        </p>
+
+        <h3>Issues Encountered</h3>
+        <h3>Specific Details</h3>
+        <h3>Future Improvements</h3>
+
+    </body>
+
+
+</html>

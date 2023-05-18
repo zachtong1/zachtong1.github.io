@@ -30,7 +30,7 @@ function clickedAmpharos() {
 }
 
 function fadeInAnimation() {
-    var timeDelay = 100; /*millisec*/
+    var timeDelay = 200; /*millisec*/
     for (let i=1; i<=f_number; i++) {
         setTimeout(function() {
             var f_target_element = document.querySelector(".f"+i);
