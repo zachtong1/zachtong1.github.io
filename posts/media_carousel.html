@@ -6,8 +6,17 @@
         <link rel="stylesheet" href="../style.css">
     </head>
 
-    <script src="main_p.js"></script>
     <script>
+        function fadeInAnimation() {
+            var timeDelay = 200; /*millisec*/
+            for (let i=1; i<=f_number; i++) {
+                setTimeout(function() {
+                    var f_target_element = document.querySelector(".f"+i);
+                    f_target_element.classList.replace("not-visible","fade-in");
+                },i*timeDelay);
+            }
+        }
+
         var f_number=2;
         fadeInAnimation();
         var autoScrolling=1;

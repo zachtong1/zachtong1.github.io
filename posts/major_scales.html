@@ -6,8 +6,16 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 
-<script src="main_p.js"></script>
 <script>
+    function fadeInAnimation() {
+        var timeDelay = 200; /*millisec*/
+        for (let i=1; i<=f_number; i++) {
+            setTimeout(function() {
+                var f_target_element = document.querySelector(".f"+i);
+                f_target_element.classList.replace("not-visible","fade-in");
+            },i*timeDelay);
+        }
+    }
     var totalTopics = 5;
     var totalQuestions = 52;
     var f_number=4;
@@ -31,7 +39,7 @@
         </li> 
     </ul>
 
-    <h2 class="f1 not-visible">Major Scale Flashcards ʕ•ᴥ•ʔ</h2>
+    <h2 class="f1 not-visible">Major Scale Flashcards</h2>
 
     <!--Select Topics-->
     <form id="chooseTopics" class="f2 not-visible">
