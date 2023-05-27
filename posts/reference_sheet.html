@@ -44,6 +44,11 @@
                 <li>pdf files</li>
             </ul>   
         <li class="post"> <b>Image:</b> &lt;img src="image.png"&gt; </li>
+        <li class="post"> <b>Video:</b> </li>
+            <ul>
+                <li>Youtube: &lt;iframe src="https://www.youtube.com/embed/lc1FHZtsDVc"&gt;, &lt;/iframe&gt; **Replace "embed" in link**</li>
+                <li> &lt;video controls&gt; &lt;source src="video.mp4" type="video/mp4"&gt; &lt;/video&gt </li>
+            </ul>  
         <li class="post"> <b>Favicon:</b> &lt;link rel="icon" href="favicon.png"&gt; </li>
         <li class="post"> <b>CSS:</b> &lt;link rel="stylesheet" href="style.css"&gt; in a separate file, or within &lt;style&gt;&lt;/style&gt; tags, or style="property:value;property:value;" attribute </li>
         <li class="post"> <b>JS:</b> within &lt;script&gt;&lt;/script&gt; tags, or &lt;script src="main.js"&gt;&lt;/script&gt; in a separate file </li>
@@ -84,8 +89,9 @@
         <li class="post"> padding: </li>
         <li class="post"> position: </li>
             <ul>
-                <li>relative</li>
-                <li>absolute</li>
+                <li>static: default document flow</li>
+                <li>relative: element removed from document flow, static position reserved; adjust position relative to static position using right/left/top/bottom</li>
+                <li>absolute: element removed from document flow, static position removed; adjust position relative to parent position using right/left/top/bottom. (parent cannot be statically positioned)</li>
             </ul>        
     </ul>
 

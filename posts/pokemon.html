@@ -1,0 +1,129 @@
+<html>
+
+    <head>
+        <title>Pokemon</title>
+        <link rel="icon" href="../favicon.png">
+        <link rel="stylesheet" href="../style.css">
+    </head>
+
+    <script>
+        function fadeInAnimation() {
+            var timeDelay = 200; /*millisec*/
+            for (let i=1; i<=f_number; i++) {
+                setTimeout(function() {
+                    var f_target_element = document.querySelector(".f"+i);
+                    f_target_element.classList.replace("not-visible","fade-in");
+                },i*timeDelay);
+            }
+        }
+
+        var f_number=2;
+        fadeInAnimation();
+        var autoScrolling=1;
+    </script>
+
+    <body>    
+        <!-- HEADER --> 
+        <h1>Zach Tong</h1>
+
+        <br>
+        <div class="header_bin">
+            <img src="../tall.png" class="header_image clickable" width="120px" height="120px" onclick="clickedAmpharos()"> 
+            <p class="hello_text invisible_hi">hi.</p>
+        </div>
+        <br><br>
+
+        <ul class="navbar"> 
+            <li> <a href="../index.html">Main</a></li>
+            <li class="current_page"> 
+                <a href="../posts.html">Posts</a>
+                <div class="triangle"></div>
+            </li> 
+        </ul>
+
+        <h2 class="f1 not-visible">Pokemon</h2>
+        <div class="f2 not-visible">
+            <button onclick="toggleAutoScroll()" style="font-family:'Lucida Sans'">Auto Scroll</button>
+            <div class="media_carousel autoScroll">
+            <div class="media_element">
+                <img src="art_pokemon/bulbasaur.png">
+                <p class="media_title">Bulbasaur</p>
+            </div>
+            <div class="media_element">
+                <img src="art_pokemon/dragonite.png">
+                <p class="media_title">Dragonite</p>
+            </div>
+            <div class="media_element">
+                <img src="art_pokemon/gible.png">
+                <p class="media_title">Gible</p>
+            </div>
+            <div class="media_element">
+                <img src="art_pokemon/mudkip.png">
+                <p class="media_title">Mudkip</p>
+            </div>
+            <div class="media_element">
+                <img src="art_pokemon/pichu.png">
+                <p class="media_title">Pichu</p>
+            </div>
+            <div class="media_element">
+                <img src="art_pokemon/piplup.png">
+                <p class="media_title">Piplup</p>
+            </div>
+            <div class="media_element">
+                <img src="art_pokemon/plusle_minun.png">
+                <p class="media_title">Plusle & Minun</p>
+            </div>
+            <div class="media_element">
+                <img src="art_pokemon/snorlax.png">
+                <p class="media_title">Snorlax</p>
+            </div>
+            <div class="media_element">
+                <img src="art_pokemon/sylveon.png">
+                <p class="media_title">Sylveon</p>
+            </div>
+            <div class="media_element">
+                <img src="art_pokemon/torchic.png">
+                <p class="media_title">Torchic</p>
+            </div>
+            <div class="media_element">
+                <img src="art_pokemon/turtwig.png">
+                <p class="media_title">Turtwig</p>
+            </div>
+            <div class="media_element">
+                <img src="art_pokemon/umbreon.png">
+                <p class="media_title">Umbreon</p>
+            </div>
+            <div class="media_element">
+                <img src="art_pokemon/wooper.png">
+                <p class="media_title">Wooper</p>
+            </div>
+            </div>
+        </div>
+
+    </body>
+
+    <script>
+        function toggleAutoScroll() {
+            let container = document.querySelector(".media_carousel");
+            if (autoScrolling==1) {
+                autoScrolling=0;
+                container.classList.replace("autoScroll","noautoScroll");
+            }
+            else {
+                autoScrolling=1;
+                container.classList.replace("noautoScroll","autoScroll");
+            }
+        }
+
+        function autoScroll() {
+            let container = document.querySelector(".media_carousel");
+            if (autoScrolling==1) {
+                container.scrollLeft += 1;
+            }
+            if (autoScrolling==1 && container.scrollLeft >= container.scrollWidth - container.clientWidth) {
+            container.scrollLeft = 0;}
+        }
+        setInterval(autoScroll, 50);
+    </script>
+
+</html>

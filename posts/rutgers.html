@@ -1,0 +1,206 @@
+<html>
+
+    <head>
+        <title>Rutgers</title>
+        <link rel="icon" href="../favicon.png">
+        <link rel="stylesheet" href="../style.css">
+    </head>
+
+    <script>
+
+        var array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
+        array.sort(() => Math.random() - 0.5);
+        console.log(array);
+
+        function fadeAnimation() {
+            if (i>13) {
+                console.log("reset");
+                for (let z=1; z<=15; z++) {
+                    var target = document.querySelector(".f"+z);
+                    target.classList.add("invisible");
+                    target.classList.remove("fadeIn");
+                    target.style.zIndex = 0;
+                }
+                var target = document.querySelector(".f"+array[0]);
+                target.classList.remove("invisible");
+                i=0;
+            }
+            else {
+                i=i+1;
+                var target = document.querySelector(".f"+array[i]);
+                target.classList.add("fadeIn");
+                target.classList.remove("invisible");
+                q=q+1;
+                target.style.zIndex = q;
+            }
+            console.log("index: "+ i + ", picture#: " + array[i]);
+        }
+
+        setTimeout(function() { /*Start function. Delay for pictures to load*/
+            var target = document.querySelector(".f"+array[0]);
+            target.classList.remove("invisible");
+            setTimeout(first(),5200);
+            i=0;
+            q=1;
+            console.log("start");
+            console.log("index: "+ i + ", picture#: " + array[i]);
+        },50);
+
+        function first() {
+            var interval = setInterval(fadeAnimation, 7200);
+        }
+        
+    </script>
+
+    <style>
+        .pictureBin {
+            position:relative;
+        }
+
+        .picture {
+            position:absolute;
+            height:400px;
+            width:620px;
+            border:3px solid black;
+        }
+
+        .fadeIn {
+            animation: fadeIn 2s;
+        }
+
+        @keyframes fadeIn {
+            from {opacity:0;}
+            to {opacity:1;}
+        }
+
+        .invisible {
+            opacity:0;
+        }
+
+        .delete {
+            display:none;
+        }
+
+    </style>
+
+    <body>    
+        <!-- Header -->
+        <div>
+            <h1>Zach Tong</h1>
+
+            <br>
+            <div class="header_bin">
+                <img src="../tall.png" class="header_image clickable" width="120px" height="120px" onclick="clickedAmpharos()"> 
+                <p class="hello_text invisible_hi">hi.</p>
+            </div>
+            <br><br>
+
+            <ul class="navbar"> 
+                <li> <a href="../index.html">Main</a></li>
+                <li class="current_page"> 
+                    <a href="../posts.html">Posts</a>
+                    <div class="triangle"></div>
+                </li> 
+            </ul>
+        </div>
+
+        <h2>Goodbye Rutgers &#9829;</h2>
+        <div class="pictureBin">
+            <img src="rutgers/1.png" class="picture f1 invisible">
+            <img src="rutgers/2.png" class="picture f2 invisible">
+            <img src="rutgers/3.png" class="picture f3 invisible">
+            <img src="rutgers/4.png" class="picture f4 invisible">
+            <img src="rutgers/5.png" class="picture f5 invisible">
+            <img src="rutgers/6.png" class="picture f6 invisible">
+            <img src="rutgers/7.png" class="picture f7 invisible">
+            <img src="rutgers/8.png" class="picture f8 invisible">
+            <img src="rutgers/9.png" class="picture f9 invisible">
+            <img src="rutgers/10.png" class="picture f10 invisible">
+            <img src="rutgers/11.png" class="picture f11 invisible">
+            <img src="rutgers/12.png" class="picture f12 invisible">
+            <img src="rutgers/13.png" class="picture f13 invisible">
+            <img src="rutgers/14.png" class="picture f14 invisible">
+            <img src="rutgers/15.png" class="picture f15 invisible">
+        </div>
+        
+        <button onclick="rutgers1()" id="r1" style="position:relative;top:420px;background-color:rgb(160, 36, 36);" class="clickable"> <b>FROM FAR AND NEAR WE CAME TO RUTGERS &#9834;</b></button>
+        
+        <div id="r2" class="delete" style="position:relative;top:420px;">
+            And resolved to learn:<br><br>
+            <input type="radio" name="R2">the skills which are necessary for gaining meaningful employment in the current job market<br>
+            <input type="radio" name="R2">a variety of subjects which fulfill the curricular requirements of the student's chosen major<br>
+            <input type="radio" name="R2" id="correct">all that we can <br> <br>
+            <button onclick="rutgers2()" style="background-color:rgb(160, 36, 36);" class="clickable"><b>Submit</b></button>
+        </div>
+
+        <div id="r3" class="delete" style="position:relative;top:420px;">
+            <form>
+                Rutgers is best described as (select all which apply): <br> <br>
+                <input id="c1" type="checkbox">prestigious</input> <br>
+                <input id="c2" type="checkbox">noisy</input> <br>
+                <input id="c3" type="checkbox">college town</input> <br>
+                <input id="c4" type="checkbox">State University of New Jersey</input> <br>
+                <input id="c5" type="checkbox">somewhere one would settle down</input> <br>
+            </form>
+            <button onclick="rutgers3()" style="background-color:rgb(160, 36, 36);" class="clickable"><b>Submit</b></button>
+        </div>
+
+        <div id="r4" class="delete" style="position:relative;top:420px;">
+            <img src="rutgers/ch1.png" style="display:inline" class="clickable">
+            <img src="rutgers/ch2.png" style="display:inline" class="clickable">
+            <img src="rutgers/ch3.png" style="display:inline" class="clickable" onclick="rutgers4()">
+        </div>
+        
+        
+
+    </body>
+
+    <script>
+        function rutgers1() {
+            var audio1 = new Audio("rutgers/rutgers1.mp3");
+            audio1.play();
+            var target = document.querySelector("#r1");
+            target.classList.add("delete");
+            var target = document.querySelector("#r2");
+            target.classList.remove("delete");
+        }
+
+        function rutgers2() {
+            var target = document.querySelector("#correct");
+            if (target.checked==true) {
+                var audio1 = new Audio("rutgers/rutgers2.mp3");
+                audio1.play();
+                var target = document.querySelector("#r2");
+                target.classList.add("delete");
+                var target = document.querySelector("#r3");
+                target.classList.remove("delete");
+            }            
+        }
+
+        function rutgers3() {
+            var c1 = document.querySelector("#c1");
+            var c2 = document.querySelector("#c2");
+            var c3 = document.querySelector("#c3");
+            var c4 = document.querySelector("#c4");
+            var c5 = document.querySelector("#c5");
+            if (c1.checked==false && c2.checked==true && c3.checked==true && c4.checked==false && c5.checked==true) {
+                var audio1 = new Audio("rutgers/rutgers3.mp3");
+                audio1.play();
+                var target = document.querySelector("#r3");
+                target.classList.add("delete");
+                var target = document.querySelector("#r4");
+                target.classList.remove("delete");
+            }            
+        }
+
+        function rutgers4() {
+            var audio1 = new Audio("rutgers/rutgers4.mp3");
+            audio1.play();
+            var target = document.querySelector("#r4");
+            target.classList.add("delete");
+        }
+
+    </script>
+
+   
+</html>
