@@ -32,35 +32,104 @@
         <li>Advisor: <a href="https://mae.rutgers.edu/xi-gu" target="_blank" class="list_link"><u>Dr. Xi Gu</u></a></li>
         <br>
 
-        <iframe width="420" height="315" src="https://www.youtube.com/embed/lc1FHZtsDVc" muted> </iframe>
+        <iframe width="420" height="315" src="https://www.youtube.com/embed/lc1FHZtsDVc"> </iframe>
 
-        <h3>Motivation & Objective</h3>
-        <p style="text-indent:2em;line-height:1.5;">
-            In large retail stores, items received from deliveries are often manually sorted (categorized) into totes before being put on shelves. 
-            Manual sorting can be time-consuming, so automating this process would be useful.
-        </p>
-        <p style="text-indent:2em;line-height:1.5;">
-            Our objective was to create an autonomous tabletop-sized gantry which can locate items positioned randomly within a predefined "pickup area", then sort them into totes based on color. 
-            For simplicity, the items used were red/yellow/blue cubes of uniform size. 
-        </p>
-        <h3>Conceptual Design</h3>
-        <p style="text-indent:2em;line-height:1.5;">
-            We chose a vacuum pump as the pickup mechanism. 
-            The vacuum moves in the 2 "horizontal" (X/Y) axes using a stepper motor/belt-and-pulley/wheeled plate along a V-slot rail, and in the "vertical" (Z) axis with a stepper motor/lead screw (the latter which was bought as a pre-built part). 
-            Limit switches are used to zero the position of the vacuum when the system initially starts. 
-        </p>
-        <p style="text-indent:2em;line-height:1.5;">
-            Arduino was chosen as the microcontroller; a relay controls the vacuum, and a CNC shield connects the stepper motors and their drivers/battery supply. 
-            A Pixy2 camera was chosen for position/color detection (this is a relatively inexpensive camera which interfaces with Arduino). 
-            The camera is fixed to a stationary mount, looking down on the pickup area.
-        </p>
-        <p style="text-indent:2em;line-height:1.5;">
-            Calculations verified that the vacuum could lift the weight of the cubes, and the stepper motors provided enough torque to move the weight of the frame. 
-            Parts were ordered from Amazon and McMaster; the total cost was $537.
-        </p>
+        <br><br>
+        <details>
+            <summary style="font-size:20px" class="clickable"> <b>Motivation & Objective</b> </summary>
+            <p style="text-indent:2em;line-height:1.5;">
+                In large retail stores, items received from deliveries are often manually sorted (categorized) into totes before being put on shelves. 
+                Manual sorting can be time-consuming, so automating this process would be useful.
+            </p>
+            <p style="text-indent:2em;line-height:1.5;">
+                Our objective was to create an autonomous tabletop-sized gantry which can locate items positioned randomly within a predefined "pickup area", then sort them into totes based on color. 
+                For simplicity, the items used were red/yellow/blue cubes of uniform size. 
+            </p>
+        </details>
+
+        <br>
+        <details>
+            <summary style="font-size:20px" class="clickable"> <b>Design Summary</b> </summary>
+            <p style="text-indent:2em;line-height:1.5;">
+                We chose a vacuum pump as the pickup mechanism. 
+                The vacuum moves in the 2 "horizontal" (X/Y) axes using a stepper motor/belt-and-pulley/wheeled plate along a V-slot rail, and in the "vertical" (Z) axis with a stepper motor/lead screw (the latter which was bought as a pre-built part). 
+                Limit switches are used to zero the position of the vacuum when the system initially starts. 
+            </p>
+            <p style="text-indent:2em;line-height:1.5;">
+                Arduino was chosen as the microcontroller; a relay controls the vacuum, and a CNC shield connects the stepper motors and their drivers/battery supply. 
+                A Pixy2 camera was chosen for position/color detection (this is a relatively inexpensive camera which interfaces with Arduino). 
+                The camera is fixed to a stationary mount, looking down on the pickup area.
+                From the coordinates of the cubes and their respective bins, the Arduino calculates the necessary sequence of displacements to move the vacuum.
+            </p>
+            <p style="text-indent:2em;line-height:1.5;">
+                Calculations verified that the vacuum could lift the weight of the cubes, and the stepper motors provided enough torque to move the weight of the frame. 
+                Parts were ordered from Amazon and McMaster; the total cost was $537.
+            </p>
+        </details>
+
+        <br>
+        <details>
+            <summary style="font-size:20px" class="clickable"> <b>Details</b> </summary>
+            <ul style="line-height:1.5;">
+                <li> <b>Stepper Motors</b><br>
+                    The stepper motors and their drivers connect to the Arduino and 12V battery via a CNC shield. <br>
+                    Each stepper motor is controlled by 2 output pins: <br>
+                    1. a direction pin (HIGH/LOW for CW/CCW rotation) <br>
+                    2. a step pin; each HIGH/LOW pulse = one step; a for loop pulses the desired number of steps with a set time delay inbetween steps (angular speed)
+                </li>
+                <li> <b>CNC Shield</b><br>
+                    Fit the shield into the Arduino by aligning the reset and 5V pins.<br>
+                    <table style="border:1px solid black">
+                        <tr>
+                            <th>Stepper Motor</th>
+                            <th>Direction Pin</th>
+                            <th>Step Pin</th>
+                        </tr>
+                        <tr>
+                            <th>X</th>
+                            <th>5</th>
+                            <th>2</th>
+                        </tr>
+                        <tr>
+                            <th>Y</th>
+                            <th>6</th>
+                            <th>3</th>
+                        </tr>
+                        <tr>
+                            <th>Z</th>
+                            <th>7</th>
+                            <th>4</th>
+                        </tr>
+                    </table>
+                    The stepper motor "A" is a clone (copies all outputs) of the stepper motor of choice (X, Y, or Z).
+                    <br>
+                    To enable A, connect the corresponding set of X, Y or Z jumper pins.
+                </li>
+                <li> <b>Vacuum</b><br>
+                    The Arduino controls the vacuum through a relay. <br>
+                    The vacuum's (+) pin connects to the (+) of a 5V battery. <br>
+                    The vacuum's (-) pin connects to a relay output terminal; the other relay output terminal connects to the (-) of the battery. <br>
+                    The relay connects to the Arduino's GND and 5V, and the desired I/O pin which controls the relay.
+
+                </li>
+                <li> <b>Limit Switches</b><br>
+                    adasdafa
+                </li>
+                <li> <b>Pixy2 Camera</b><br>
+                    Pixy2 documentation link<br>
+                    The Pixy2 uses the Arduino SPI connection (cord facing out), and requires a USB power supply.<br>
+                    The USB allows use of PixyMon, which visualizes what the camera sees/detects and enables sensitivity adjustment. <br>
+                    To train a new color signature, hold the side button...<br>
+                    Pixy2 library variables etc:
+                </li>
+                <li> <b>Arduino Code</b><br>
+                    Full code is here (expand embedded pdf)<br>
+                    Summarized explanation
+                </li>
+            </ul>
+        </details>
 
         <h3>Issues Encountered</h3>
-        <h3>Specific Details</h3>
         <h3>Future Improvements</h3>
 
     </body>
