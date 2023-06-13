@@ -68,7 +68,7 @@ function dance() {
     
 }
 
-setInterval(dance, 150);
+setInterval(dance, 200);
 
 
 
