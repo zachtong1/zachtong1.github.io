@@ -8,6 +8,16 @@
 
     <script src="main.js"></script>
     <script>
+        function fadeInAnimation() {
+        var timeDelay = 300; /*millisec*/
+        for (let i=1; i<=f_number; i++) {
+            setTimeout(function() {
+                var f_target_element = document.querySelector(".f"+i);
+                f_target_element.classList.replace("not-visible","fade-in");
+            },i*timeDelay);
+        }
+        }
+
         var f_number=3;
         fadeInAnimation();
     </script>
@@ -15,14 +25,20 @@
     <body>
         <!-- Header -->
         <div>
-            <h1>Zach Tong</h1>
-            <br>
+            <div class="headerCircle1">
+                <div class="headerCircle2_1"></div>
+                <div class="headerCircle2_2"></div>
+                <div class="headerCircle3_1"></div>
+                <div class="headerCircle3_2"></div>
+                <div class="mNote1 invisible_hi">&#9835;</div>
+                <div class="mNote2 invisible_hi">&#119136;</div>
+            </div>
+            <h1>Zach Tong</h1> <br>
             <div class="header_bin">
-                <img src="tall.png" class="header_image clickable" width="120px" height="120px" onclick="clickedAmpharos()"> 
-                <p class="hello_text invisible_hi">hi.</p>
+                <img src="tall.png" class="header_image clickable" width="120px" height="120px" onclick="danceClick()" oncontextmenu="caterpie()"> 
+                <audio id="danceMusic" src="munch.mp3"></audio>
             </div>
             <br><br>
-
             <ul class="navbar"> 
                 <li class="current_page"> 
                     <a href="index.html"> Main </a> 
@@ -35,12 +51,12 @@
         <h2 class="f1 not-visible">About Me</h2>
         <div class="intro">
             <img src="me.PNG" width="200px" height="200px" class="f2 not-visible">
-            <p class="f3 not-visible">My resume can be found <a onclick="function1()" class="clickable"> <u>here</u> </a> (pdf).</p>
+            <p class="f3 not-visible">My resume can be found <a onclick="function1()" class="clickable list_link"> <u>here</u> </a> (pdf).</p>
         </div>
         
         <div class="intro1 invisible">
             <img src="IMG_1.jpg">
-            <p> <a onclick="function2()" class="clickable"> <u>Zach Tong Resume 2023</u> </a> (pdf)</p>
+            <p> <a onclick="function2()" class="clickable list_link"> <u>Zach Tong Resume 2023</u> </a> (pdf)</p>
         </div>
         
         <img class="intro2 invisible" src="IMG_2.jpg">
