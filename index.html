@@ -8,23 +8,22 @@
 
     <script src="main.js"></script>
     <script>
-        function fadeInAnimation() {
-        var timeDelay = 300; /*millisec*/
-        for (let i=1; i<=f_number; i++) {
-            setTimeout(function() {
-                var f_target_element = document.querySelector(".f"+i);
-                f_target_element.classList.replace("not-visible","fade-in");
-            },i*timeDelay);
-        }
-        }
+        var f_number=4;
+        var timeDelay = 100;
 
-        var f_number=3;
+        function fadeInAnimation() {
+            for (let i=1; i<=f_number; i++) {
+                setTimeout(function() {
+                    var f_target_element = document.querySelector(".f"+i);
+                    f_target_element.classList.replace("not-visible","fade-in");
+                },i*timeDelay);
+            }
+        }
         fadeInAnimation();
     </script>
 
     <body>
-        <!-- Header -->
-        <div>
+        <!-- #region Header -->
             <div class="headerCircle1">
                 <div class="headerCircle2_1"></div>
                 <div class="headerCircle2_2"></div>
@@ -36,7 +35,7 @@
             <h1>Zach Tong</h1> <br>
             <div class="header_bin">
                 <img src="tall.png" class="header_image clickable" width="120px" height="120px" onclick="danceClick()" oncontextmenu="caterpie()"> 
-                <audio id="danceMusic" src="munch.mp3"></audio>
+                <audio id="danceMusic" src="sounds/dance.mp3"></audio>
             </div>
             <br><br>
             <ul class="navbar"> 
@@ -45,44 +44,82 @@
                     <div class="triangle"></div> 
                 </li>
                 <li> <a href="posts.html">Posts</a></li> 
+                <li> <a href="games.html">Games</a></li> 
             </ul>
-        </div>
+        <!-- #endregion -->
 
-        <h2 class="f1 not-visible">About Me</h2>
         <div class="intro">
-            <img src="me.PNG" width="200px" height="200px" class="f2 not-visible">
-            <p class="f3 not-visible">My resume can be found <a onclick="function1()" class="clickable list_link"> <u>here</u> </a> (pdf).</p>
+            <h2 class="f1 not-visible">About Me</h2>
+            <p class="f2 not-visible">My resume can be found <a onclick="function1()" class="clickable list_link"> <u>here</u> </a> (pdf).</p>
+            <h2 class="f3 not-visible">Upcoming Dates</h2>
+            <div class="f4 not-visible">
+                <table style="text-align:left;margin-left:24px;">
+                    <tr>
+                        <th>&#11162;</th>
+                        <td style="padding-right:20px;">Pikmin 4 (7/21)   </td>
+                        <td id="countdown1"></td>            
+                    </tr>
+                    <tr>
+                        <th>&#11162;</th>
+                        <td>Overwatch S6 </td>
+                        <td id="countdown4"></td>            
+                    </tr>
+                    <tr>
+                        <th>&#11162;</th>
+                        <td>Birthday (8/27) </td>
+                        <td id="countdown2"></td>            
+                    </tr>
+                    <tr>
+                        <th>&#11162;</th>
+                        <td>2024 </td>
+                        <td id="countdown3"></td>            
+                    </tr>
+                </table>
+            </div>
         </div>
         
         <div class="intro1 invisible">
             <img src="IMG_1.jpg">
-            <p> <a onclick="function2()" class="clickable list_link"> <u>Zach Tong Resume 2023</u> </a> (pdf)</p>
-        </div>
-        
-        <img class="intro2 invisible" src="IMG_2.jpg">
-        <br><br>
+        </div>        
 
     </body>
 
     <script>
         function function1() {
-            var audio = new Audio("cave21.mp3");
+            var audio = new Audio("sounds/cave21.mp3");
             audio.play();
             var target_element1 = document.querySelector(".intro");
             target_element1.classList.add("invisible");
             var target = document.querySelector(".intro1");
             target.classList.replace("invisible","fade-in_slow");
         }
-
-        function function2() {
-            var audio = new Audio("ratatouille.mp3");
-            audio.play();
-            var target_element1 = document.querySelector(".intro1");
-            target_element1.classList.add("invisible");
-            var target = document.querySelector(".intro2");
-            target.classList.replace("invisible","fade-in_slow");
-        }
     </script>
     
+    <script>
+        function countdown() {
+            var currentDate = new Date();
+
+            var targetDate = new Date('July 21, 2023');
+            var timeDiff = targetDate.getTime() - currentDate.getTime();
+            var daysRemaining = Math.floor(timeDiff / (1000 * 60 * 60 * 24))+1;
+            document.getElementById('countdown1').textContent = daysRemaining + ' days';
+
+            var targetDate = new Date('August 15, 2023');
+            var timeDiff = targetDate.getTime() - currentDate.getTime();
+            var daysRemaining = Math.floor(timeDiff / (1000 * 60 * 60 * 24))+1;
+            document.getElementById('countdown4').textContent = daysRemaining + ' days';
+
+            var targetDate = new Date('August 27, 2023');
+            var timeDiff = targetDate.getTime() - currentDate.getTime();
+            var daysRemaining = Math.floor(timeDiff / (1000 * 60 * 60 * 24))+1;
+            document.getElementById('countdown2').textContent = daysRemaining + ' days';
+
+            var targetDate = new Date('January 1, 2024');
+            var timeDiff = targetDate.getTime() - currentDate.getTime();
+            var daysRemaining = Math.floor(timeDiff / (1000 * 60 * 60 * 24))+1;
+            document.getElementById('countdown3').textContent = daysRemaining + ' days';
+        }
+        window.onload = countdown;
+    </script>
 
 </html>

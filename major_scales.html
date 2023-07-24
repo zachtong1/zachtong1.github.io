@@ -2,11 +2,11 @@
 
 <head>
     <title>Major Scales</title>
-    <link rel="icon" href="../favicon.png">
-    <link rel="stylesheet" href="../style.css">
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<script src="main_p.js"></script>
+<script src="main.js"></script>
 <script>
     function fadeInAnimation() {
         var timeDelay = 200; /*millisec*/
@@ -24,30 +24,30 @@
 </script>
 
 <body>
-    <!-- Header -->
-    <div>
-        <div class="headerCircle1">
-            <div class="headerCircle2_1"></div>
-            <div class="headerCircle2_2"></div>
-            <div class="headerCircle3_1"></div>
-            <div class="headerCircle3_2"></div>
-            <div class="mNote1 invisible_hi">&#9835;</div>
-            <div class="mNote2 invisible_hi">&#119136;</div>
-        </div>
-        <h1>Zach Tong</h1> <br>
-        <div class="header_bin">
-            <img src="../tall.png" class="header_image clickable" width="120px" height="120px" onclick="danceClick()" oncontextmenu="caterpie()"> 
-            <audio id="danceMusic" src="../munch.mp3"></audio>
-        </div>
-        <br><br>
-        <ul class="navbar"> 
-            <li> <a href="../index.html">Main</a></li>
-            <li class="current_page"> 
-                <a href="../posts.html">Posts</a>
-                <div class="triangle"></div>
-            </li> 
-        </ul>
+    <!-- #region Header -->
+    <div class="headerCircle1">
+        <div class="headerCircle2_1"></div>
+        <div class="headerCircle2_2"></div>
+        <div class="headerCircle3_1"></div>
+        <div class="headerCircle3_2"></div>
+        <div class="mNote1 invisible_hi">&#9835;</div>
+        <div class="mNote2 invisible_hi">&#119136;</div>
     </div>
+    <h1>Zach Tong</h1> <br>
+    <div class="header_bin">
+        <img src="tall.png" class="header_image clickable" width="120px" height="120px" onclick="danceClick()" oncontextmenu="caterpie()"> 
+        <audio id="danceMusic" src="sounds/dance.mp3"></audio>
+    </div>
+    <br><br>
+    <ul class="navbar"> 
+        <li> <a href="index.html"> Main </a> </li>
+        <li class="current_page"> 
+            <a href="posts.html">Posts</a>
+            <div class="triangle"></div> 
+        </li> 
+        <li> <a href="games.html">Games</a></li> 
+    </ul>
+    <!-- #endregion -->
 
     <h2 class="f1 not-visible">Major Scale Flashcards</h2>
 
@@ -484,13 +484,13 @@
         if (input.value==answer.textContent) {
             correct_text.classList.remove("invisible");
             incorrect_text.classList.add("invisible");
-            var audio = new Audio("../sounds/duolingo-correct.mp3");
+            var audio = new Audio("sounds/duolingo-correct.mp3");
             audio.play();
         }
         else {
             incorrect_text.classList.remove("invisible");
             correct_text.classList.add("invisible");
-            var audio = new Audio("../sounds/boat_horn.mp3");
+            var audio = new Audio("sounds/boat_horn.mp3");
             audio.play();
         }
     }

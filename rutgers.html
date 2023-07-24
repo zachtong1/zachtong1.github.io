@@ -2,11 +2,11 @@
 
     <head>
         <title>Rutgers</title>
-        <link rel="icon" href="../favicon.png">
-        <link rel="stylesheet" href="../style.css">
+        <link rel="icon" href="favicon.png">
+        <link rel="stylesheet" href="style.css">
     </head>
 
-    <script src="main_p.js"></script>
+    <script src="main.js"></script>
     <script>
 
         var array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15];
@@ -85,30 +85,30 @@
     </style>
 
     <body>    
-        <!-- Header -->
-        <div>
-            <div class="headerCircle1">
-                <div class="headerCircle2_1"></div>
-                <div class="headerCircle2_2"></div>
-                <div class="headerCircle3_1"></div>
-                <div class="headerCircle3_2"></div>
-                <div class="mNote1 invisible_hi">&#9835;</div>
-                <div class="mNote2 invisible_hi">&#119136;</div>
-            </div>
-            <h1>Zach Tong</h1> <br>
-            <div class="header_bin">
-                <img src="../tall.png" class="header_image clickable" width="120px" height="120px" onclick="danceClick()" oncontextmenu="caterpie()"> 
-                <audio id="danceMusic" src="../munch.mp3"></audio>
-            </div>
-            <br><br>
-            <ul class="navbar"> 
-                <li> <a href="../index.html">Main</a></li>
-                <li class="current_page"> 
-                    <a href="../posts.html">Posts</a>
-                    <div class="triangle"></div>
-                </li> 
-            </ul>
+        <!-- #region Header -->
+        <div class="headerCircle1">
+            <div class="headerCircle2_1"></div>
+            <div class="headerCircle2_2"></div>
+            <div class="headerCircle3_1"></div>
+            <div class="headerCircle3_2"></div>
+            <div class="mNote1 invisible_hi">&#9835;</div>
+            <div class="mNote2 invisible_hi">&#119136;</div>
         </div>
+        <h1>Zach Tong</h1> <br>
+        <div class="header_bin">
+            <img src="tall.png" class="header_image clickable" width="120px" height="120px" onclick="danceClick()" oncontextmenu="caterpie()"> 
+            <audio id="danceMusic" src="sounds/dance.mp3"></audio>
+        </div>
+        <br><br>
+        <ul class="navbar"> 
+            <li> <a href="index.html"> Main </a> </li>
+            <li class="current_page"> 
+                <a href="posts.html">Posts</a>
+                <div class="triangle"></div> 
+            </li> 
+            <li> <a href="games.html">Games</a></li> 
+        </ul>
+        <!-- #endregion -->
 
         <h2>Goodbye Rutgers &#9829;</h2>
         <div class="pictureBin">
@@ -141,7 +141,7 @@
 
         <div id="r3" class="delete" style="position:relative;top:420px;">
             <form>
-                Rutgers is best described as (select all which apply): <br> <br>
+                From the perspective of someone who would like to settle down in a noisy college town, Rutgers is best described as (select all which apply): <br> <br>
                 <input id="c1" type="checkbox">prestigious</input> <br>
                 <input id="c2" type="checkbox">noisy</input> <br>
                 <input id="c3" type="checkbox">college town</input> <br>
@@ -149,8 +149,6 @@
                 <input id="c5" type="checkbox">somewhere one would settle down</input> <br>
             </form>
             <button onclick="rutgers3()" style="background-color:rgb(160, 36, 36);" class="clickable"><b>Submit</b></button>
-            <br><br>
-            <a href="https://en.wikipedia.org/wiki/On_the_Banks_of_the_Old_Raritan" target="_blank" class="list_link"><u>hint</u></a>
         </div>
 
         <div id="r4" class="delete" style="position:relative;top:420px;">

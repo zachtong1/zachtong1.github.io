@@ -36,6 +36,16 @@ function dance() {
             picNum=1;
             exit=1;
             header_image.src = "tall1.png";
+            var circle = document.querySelector(".headerCircle1");
+            circle.style.backgroundColor = "rgb(195, 220, 235)";
+            var circle = document.querySelector(".headerCircle2_1");
+            circle.style.backgroundColor = "rgb(195, 230, 235)";
+            var circle = document.querySelector(".headerCircle2_2");
+            circle.style.backgroundColor = "rgb(195, 230, 235)";
+            var circle = document.querySelector(".headerCircle3_1");
+            circle.style.backgroundColor = "rgb(195, 220, 235)";
+            var circle = document.querySelector(".headerCircle3_2");
+            circle.style.backgroundColor = "rgb(195, 220, 235)";
             var hello_text = document.querySelector(".mNote1");
             hello_text.classList.remove("invisible_hi");
             setTimeout(function() {
@@ -51,6 +61,16 @@ function dance() {
             picNum=3;
             exit=1;
             header_image.src = "tall2.png";
+            var circle = document.querySelector(".headerCircle1");
+            circle.style.backgroundColor = "rgb(195, 230, 235)";
+            var circle = document.querySelector(".headerCircle2_1");
+            circle.style.backgroundColor = "rgb(185, 230, 205)";
+            var circle = document.querySelector(".headerCircle2_2");
+            circle.style.backgroundColor = "rgb(185, 230, 205)";
+            var circle = document.querySelector(".headerCircle3_1");
+            circle.style.backgroundColor = "rgb(195, 235, 205)";
+            var circle = document.querySelector(".headerCircle3_2");
+            circle.style.backgroundColor = "rgb(195, 235, 205)";
             var hello_text = document.querySelector(".mNote2");
             hello_text.classList.remove("invisible_hi");
             setTimeout(function() {
@@ -68,7 +88,7 @@ function dance() {
     
 }
 
-setInterval(dance, 200);
+setInterval(dance, 220);
 
 
 
