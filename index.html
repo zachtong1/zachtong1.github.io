@@ -8,7 +8,7 @@
 
     <script src="main.js"></script>
     <script>
-        var f_number=4;
+        var f_number=6;
         var timeDelay = 100;
 
         function fadeInAnimation() {
@@ -56,23 +56,25 @@
                 <table style="text-align:left;margin-left:24px;">
                     <tr>
                         <th>&#11162;</th>
-                        <td style="padding-right:20px;">Pikmin 4 (7/21)   </td>
-                        <td id="countdown1"></td>            
-                    </tr>
-                    <tr>
-                        <th>&#11162;</th>
-                        <td>Overwatch S6 </td>
-                        <td id="countdown4"></td>            
-                    </tr>
-                    <tr>
-                        <th>&#11162;</th>
-                        <td>Birthday (8/27) </td>
-                        <td id="countdown2"></td>            
-                    </tr>
-                    <tr>
-                        <th>&#11162;</th>
-                        <td>2024 </td>
+                        <td style="padding-right:20px;">2024 </td>
                         <td id="countdown3"></td>            
+                    </tr>
+                </table>
+            </div>
+            <h2 class="f5 not-visible">Favorite Pages</h2>
+            <div class="f6 not-visible">
+                <table style="text-align:left;margin-left:24px;line-height:1.5;">
+                    <tr>
+                        <th> <a> <img src="enemy1.png" class="link_image"> </a> </th>
+                        <td> <div style="font-size:18px;">Adventure Quest</div>A bullet hell game I made with Javascript and HTML Canvas.</td>
+                    </tr>
+                    <tr>
+                        <th> <a href="bass_clef.html"> <img src="bassClef/images/bass/3_2_D3.png" class="link_image"> </a> </th>
+                        <td> <div style="font-size:18px;">Bass Clef Flashcards</div>Practice reading bass clef notes on piano.</td>
+                    </tr>
+                    <tr>
+                        <th> <a href="reference_sheet.html"> <img src="https://static.vecteezy.com/system/resources/previews/000/381/075/original/html-vector-icon.jpg" class="link_image"> </a> </th>
+                        <td> <div style="font-size:18px;">HTML Reference Sheet</div></td>
                     </tr>
                 </table>
             </div>
@@ -98,21 +100,6 @@
     <script>
         function countdown() {
             var currentDate = new Date();
-
-            var targetDate = new Date('July 21, 2023');
-            var timeDiff = targetDate.getTime() - currentDate.getTime();
-            var daysRemaining = Math.floor(timeDiff / (1000 * 60 * 60 * 24))+1;
-            document.getElementById('countdown1').textContent = daysRemaining + ' days';
-
-            var targetDate = new Date('August 15, 2023');
-            var timeDiff = targetDate.getTime() - currentDate.getTime();
-            var daysRemaining = Math.floor(timeDiff / (1000 * 60 * 60 * 24))+1;
-            document.getElementById('countdown4').textContent = daysRemaining + ' days';
-
-            var targetDate = new Date('August 27, 2023');
-            var timeDiff = targetDate.getTime() - currentDate.getTime();
-            var daysRemaining = Math.floor(timeDiff / (1000 * 60 * 60 * 24))+1;
-            document.getElementById('countdown2').textContent = daysRemaining + ' days';
 
             var targetDate = new Date('January 1, 2024');
             var timeDiff = targetDate.getTime() - currentDate.getTime();

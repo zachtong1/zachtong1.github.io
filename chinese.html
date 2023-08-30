@@ -1,0 +1,36 @@
+
+
+<body>
+
+
+
+    <button id="showCharacter" style="font-size:52px;padding:12px">Flip</button>
+
+</body>
+
+
+<script type="text/javascript" src="csv2json.js"></script>
+<script>
+
+    //https://csvjson.com/csv2json, https://www.npmjs.com/package/csvjson-csv2json; use browser example not node
+    //everything is string by default; option to parse numbers, ie convert to float or whatever
+   
+
+    //copy paste, remember to include column titles from csv file
+    const csv = `Character,Pinyin,Meaning
+安排,ān pái,arrange
+棒,bàng,great
+帮忙,bāng máng,help
+笔,bǐ,pen
+比赛,bǐ sài,competition`;
+
+    const showCharacter = document.getElementById('showCharacter');
+
+    const array1 = CSVJSON.csv2json(csv, {parseNumbers: true});
+    console.log(array1);
+    console.log(array1[0]["Character"]);
+
+    showCharacter.textContent = array1[0]["Character"];
+
+</script>
+

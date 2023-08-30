@@ -7,23 +7,6 @@
 </head>
 
 <script src="main.js"></script>
-<script>
-    function fadeInAnimation() {
-        var timeDelay = 200; /*millisec*/
-        for (let i=1; i<=f_number; i++) {
-            setTimeout(function() {
-                var f_target_element = document.querySelector(".f"+i);
-                f_target_element.classList.replace("not-visible","fade-in");
-            },i*timeDelay);
-        }
-    }
-
-    var totalTopics = 1;
-    var totalQuestions = 9;
-    var f_number=4;
-    fadeInAnimation();
-</script>
-
 <style>
 
 .piano {
@@ -40,11 +23,11 @@
 }
 
 .key_white:hover {
-    background-color:rgb(0, 180, 255);
+    background-color:rgb(112, 122, 165);
 }
 
 .key_black:hover {
-    background-color:rgb(0, 180, 255);
+    background-color:rgb(112, 122, 165);
 }
 
 .black_keys_C {
@@ -96,75 +79,25 @@
     </ul>
     <!-- #endregion -->
 
-    <h2 class="f1 not-visible">Bass Clef Flashcards</h2>
+    <h2>Bass Clef Flashcards</h2>
 
-    <!--Select Topics-->
-    <form id="chooseTopics" class="f2 not-visible">
-        Notes to include (WIP): <br> <br>
-        <input id="topic1" type="checkbox">Bass Clef</input> <br>
-        <!--<input id="topic2" type="checkbox">Bass Clef - Above/Below Staff</input> <br>-->
-        <!--<input id="topic3" type="checkbox">Treble Clef - Above/Below Staff</input> <br>-->
-    </form>
+    <img id="image1">
 
-    <!--Start Button-->
-    <button onclick="start1()" id="startButton" class="f3 not-visible">Start</button>
-
-    <!--Questions-->
-    <div>
-        <div class="q1 invisible"> 
-            <img src="bassClef/bass/bass_A.png">
-            <div class="q1_topic invisible">1</div>
-        </div>
-        <div class="q2 invisible"> 
-            <img src="bassClef/bass/bass_A1.png">
-            <div class="q2_topic invisible">1</div>
-        </div>
-        <div class="q3 invisible"> 
-            <img src="bassClef/bass/bass_B.png">
-            <div class="q3_topic invisible">1</div>
-        </div>
-        <div class="q4 invisible"> 
-            <img src="bassClef/bass/bass_C.png">
-            <div class="q4_topic invisible">1</div>
-        </div>
-        <div class="q5 invisible"> 
-            <img src="bassClef/bass/bass_D.png">
-            <div class="q5_topic invisible">1</div>
-        </div>
-        <div class="q6 invisible"> 
-            <img src="bassClef/bass/bass_E.png">
-            <div class="q6_topic invisible">1</div>
-        </div>
-        <div class="q7 invisible"> 
-            <img src="bassClef/bass/bass_F.png">
-            <div class="q7_topic invisible">1</div>
-        </div>
-        <div class="q8 invisible"> 
-            <img src="bassClef/bass/bass_G.png">
-            <div class="q8_topic invisible">1</div>
-        </div>
-        <div class="q9 invisible"> 
-            <img src="bassClef/bass/bass_G1.png">
-            <div class="q9_topic invisible">1</div>
-        </div>
-        
-    </div>
-
-    <br>
-    <div class="piano invisible"> 
-        <div class="key_white C" onclick="checkC()"></div> <!--C-->
-        <div class="key_white D" onclick="checkD()"></div> <!--D-->
+    <br><br>
+    <div class="piano"> 
+        <div class="key_white C" onclick="pressC()"></div> <!--C-->
+        <div class="key_white D" onclick="pressD()"></div> <!--D-->
 
         <div class="black_keys_C">
             <div class="key_black"></div>
             <div class="key_black"></div>
         </div>
 
-        <div class="key_white E" onclick="checkE()"></div> <!--E-->
-        <div class="key_white F" onclick="checkF()"></div> <!--F-->
-        <div class="key_white G" onclick="checkG()"></div> <!--G-->
-        <div class="key_white A" onclick="checkA()"></div> <!--A-->
-        <div class="key_white B" onclick="checkB()"></div> <!--B-->
+        <div class="key_white E" onclick="pressE()"></div> <!--E-->
+        <div class="key_white F" onclick="pressF()"></div> <!--F-->
+        <div class="key_white G" onclick="pressG()"></div> <!--G-->
+        <div class="key_white A" onclick="pressA()"></div> <!--A-->
+        <div class="key_white B" onclick="pressB()"></div> <!--B-->
 
         <div class="black_keys_F">
             <div class="key_black"></div>
@@ -173,180 +106,139 @@
         </div>
 
     </div>
+
+    <div style="margin-left:280px;font-size:22px;">
+        <div id="score">Score: 0</div>
+        <div id="past">Past time: 0 sec</div>
+        <div id="timer">Average time: 0 sec</div>
+    </div>
         
 </body>
 
 <script>
 
-    var q_list = []; /*q_list is the included questions (ie, w a selected topic)*/
-    var q_index = 0; /*current index of q_list*/
-    var q_list1 = []; /*q_list1 is the selected topics*/
-    var correct_text = document.querySelector(".correct_text");
-    var incorrect_text = document.querySelector(".incorrect_text");
+    var array1 = [
+    '2_1_C2',
+    '2_2_D2',
+    '2_3_E2',
+    '2_4_F2',
+    '2_5_G2',
+    '2_6_A2',
+    '2_7_B2',
+    '3_1_C3',
+    '3_2_D3',
+    '3_3_E3',
+    '3_4_F3',
+    '3_5_G3',
+    '3_6_A3',
+    '3_7_B3',
+    '4_1_C4',
+    '4_2_D4',
+    '4_3_E4',
+    '4_4_F4',
+    '4_5_G4'
+    ];
+    var pressedNote = 'string';
+    var arrayIndex = 0;
+    var score = 0;
+    var counter = 0;
+    var avgTimeArray = [];
+    var avgTimeArrayIndex = 0;
 
-    function start1() {
-        iii=0; 
-        /*for each topic, if it is checked, add it to q_list1.*/
-        for (let i=1; i<=totalTopics; i++) {
-            const topicCheck = document.querySelector("#topic"+i);
-            if (topicCheck.checked == true) {
-                q_list1[iii]=i;
-                iii+=1;
+    array1.sort(() => Math.random() - 0.5);
+    console.log(array1);
+    console.log(array1[arrayIndex][4]);
+
+
+    var image1 = document.getElementById('image1');
+    image1.src = "bassClef/images/bass/"+array1[arrayIndex]+".png";
+
+    var scoreE = document.getElementById('score');
+    var timerE = document.getElementById('timer');
+    var pastE = document.getElementById('past');
+    var sum = 0;
+
+    //#region
+    function pressC() {
+        pressedNote = 'C';
+        var audio = new Audio("bassClef/sounds/C4.mp3");
+        audio.play();
+        check();        
+    }
+    function pressD() {
+        pressedNote = 'D';
+        var audio = new Audio("bassClef/sounds/D4.mp3");
+        audio.play();
+        check();        
+    }
+    function pressE() {
+        pressedNote = 'E';
+        var audio = new Audio("bassClef/sounds/E4.mp3");
+        audio.play();
+        check();        
+    }
+    function pressF() {
+        pressedNote = 'F';
+        var audio = new Audio("bassClef/sounds/F4.mp3");
+        audio.play();
+        check();        
+    }
+    function pressG() {
+        pressedNote = 'G';
+        var audio = new Audio("bassClef/sounds/G4.mp3");
+        audio.play();
+        check();        
+    }
+    function pressA() {
+        pressedNote = 'A';
+        var audio = new Audio("bassClef/sounds/A4.mp3");
+        audio.play();
+        check();        
+    }
+    function pressB() {
+        pressedNote = 'B';
+        var audio = new Audio("bassClef/sounds/B4.mp3");
+        audio.play();
+        check();        
+    }
+    //#endregion
+
+    function check() {
+        
+        if (pressedNote == array1[arrayIndex][4]) {
+
+            if (arrayIndex<array1.length-1) {
+                arrayIndex +=1;
             }
-        }
-        /*checks that at least one topic is selected*/
-        if (q_list1.length==0) {
-            alert("Select at least one topic.");
-            return;
-        }
-        else {
-            start();
-        }
-    }
-    
-    function start() {
-        const chooseTopics = document.querySelector("#chooseTopics");
-        chooseTopics.classList.add("invisible");
-        const startButton = document.querySelector("#startButton");
-        startButton.classList.add("invisible");
-
-        const piano = document.querySelector(".piano");
-        piano.classList.remove("invisible");
-
-        var q_list2 = new Array(totalQuestions).fill(0); /*preallocate*/
-        for (let i=1; i<=totalQuestions; i++) { /*q_list2 is each question's topic*/
-            const questionTopicCheck = document.querySelector(".q"+i+"_topic");
-            q_list2[i-1] = questionTopicCheck.textContent;
-        }
-        
-        var ii = 0;
-        for (let i=0; i<=totalQuestions-1; i++) { /*q_list is questions to include (ie, w a selected topic)*/
-            if (q_list1.includes(parseInt(q_list2[i]))==true) {
-                q_list[ii]=i+1;
-                ii +=1;
+            else {
+                array1.sort(() => Math.random() - 0.5);
+                arrayIndex = 0;
             }
+            
+            image1.src = "bassClef/images/bass/"+array1[arrayIndex]+".png";
+            console.log(array1[arrayIndex][4]);
+            score += 1;
+            scoreE.textContent = 'Score: '+score;
+
+            clearInterval(timer);
+            pastE.textContent = 'Past time: '+(counter*0.01).toFixed(2) +' sec';
+            avgTimeArray[avgTimeArrayIndex] = counter*0.01;
+            avgTimeArrayIndex += 1;
+            console.log(avgTimeArray);
+            sum = 0;
+            for (let i=0; i<avgTimeArray.length; i++) {
+                sum += avgTimeArray[i];
+            }
+            sum = (sum/avgTimeArray.length).toFixed(2);
+            timerE.textContent = 'Average time: '+sum +' sec';
+            counter = 0;
+            timer = setInterval(function() {counter +=1;}, 10);
         }
-
-        q_list.sort(() => Math.random() - 0.5);
-
-        const target_element1 = document.querySelector(".q"+q_list[q_index]);
-        target_element1.classList.remove("invisible");
-    }
-
-    function checkC() {
-        if (q_list[q_index]==4) {
-            var audio = new Audio("bassClef/sounds/C4.mp3");
-            audio.play();
-            nextQuestion();        
-        }     
-    }
-
-    function checkD() {
-        if (q_list[q_index]==5) {
-            var audio = new Audio("bassClef/sounds/D4.mp3");
-            audio.play();
-            nextQuestion();        
-        }     
-    }
-
-    function checkE() {
-        if (q_list[q_index]==6) {
-            var audio = new Audio("bassClef/sounds/E4.mp3");
-            audio.play();
-            nextQuestion();        
-        }     
-    }
-
-    function checkF() {
-        if (q_list[q_index]==7) {
-            var audio = new Audio("bassClef/sounds/F4.mp3");
-            audio.play();
-            nextQuestion();        
-        }     
-    }
-
-    function checkG() {
-        if (q_list[q_index]==8 || q_list[q_index]==9) {
-            var audio = new Audio("bassClef/sounds/G4.mp3");
-            audio.play();
-            nextQuestion();        
-        }     
-    }
-
-    function checkA() {
-        if (q_list[q_index]==1 || q_list[q_index]==2) {
-            var audio = new Audio("bassClef/sounds/A4.mp3");
-            audio.play();
-            nextQuestion();        
-        }     
-    }
-
-    function checkB() {
-        if (q_list[q_index]==3) {
-            var audio = new Audio("bassClef/sounds/B4.mp3");
-            audio.play();
-            nextQuestion();        
-        }     
-    }
-
-    function nextQuestion() {
         
-        var target_element = document.querySelector(".q"+q_list[q_index]);
-        target_element.classList.add("invisible");
-
-        if (q_index<q_list.length-1) {
-            q_index +=1;
-        }
-        else {
-            q_list.sort(() => Math.random() - 0.5);
-            q_index=0;
-        }
-
-        var target_element = document.querySelector(".q"+q_list[q_index]);
-        target_element.classList.remove("invisible");
         
     }
 
-    function prevQuestion() {
-        
-        var target_element = document.querySelector(".q"+q_list[q_index]);
-        target_element.classList.add("invisible");
-        const answer = document.querySelector(".a"+q_list[q_index]);
-        answer.classList.add("invisible");
-
-        correct_text.classList.add("invisible");
-        incorrect_text.classList.add("invisible");
-
-        if (q_index>0) {
-            q_index -=1;
-        }
-        else {
-            q_index=q_list.length-1;
-        }
-
-        const qcounter = document.querySelector("#qcounter");
-        qcounter.textContent = (q_index+1)+"/"+q_list.length;
-
-        var target_element = document.querySelector(".q"+q_list[q_index]);
-        target_element.classList.remove("invisible");
-
-        const input1 = document.querySelector(".input"+q_list[q_index]);
-        input1.focus() = true;
-
-    }
-
-    document.addEventListener('keydown', pressKeys);
-    function pressKeys() {
-        if (event.key === 'Enter') {
-            check();
-        }
-        if (event.key === 'ArrowRight') {
-            nextQuestion();
-        }
-        if (event.key === 'ArrowLeft') {
-            prevQuestion();
-        }
-    }
+    var timer = setInterval(function() {counter +=1;}, 10);
 
 </script>
 
